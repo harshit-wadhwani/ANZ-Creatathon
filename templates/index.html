@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css"  href="static/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Edu+TAS+Beginner&family=Inter:wght@200;300;400;500;600&family=Kalam&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap">
+    <title>Document</title>
+    
+</head>
+<body>
+    <div class="centered-content">
+        <h1>Welcome to our Automatic Hiring System! </h1>
+                <form method="POST" enctype="multipart/form-data" action="{{ url_for('loading') }}">
+                    <label for="name">Name:</label>
+                    <input type="text" class="label_box"  name="name" required />
+                    <br></br>
+                    <label for="email">Email:</label>
+                    <input type="text" class="label_box" name="email" required />
+                    <br></br>
+                    <label for="phone">Phone Number:</label>
+                    
+                    <input type="text" class="label_box"  name="phone" required />
+                    <br></br>
+                    <label for="selectOption">Select any one job role:</label>
+                    <select id="selectOption" name="selectOption">
+                    <option value="option 1"  >Junior Software Developer</option>
+                    <option value="option2">Full Stack Developer</option>
+                    <option value="option3">Marketing Manager</option>
+                    </select>
+                    <br></br>
+                    <label for="resume">Upload your Resume:</label>
+                    <br></br>
+                    <input type="file" id="file" name="file" required class="file-input" />
+                    <br></br>
+                    <input type="Submit" value="Submit">
+                </form>
+</div>
+</div>
+</div>
+
+</body>
+</html>

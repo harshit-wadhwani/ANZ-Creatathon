@@ -1,0 +1,75 @@
+body {
+    background-image: url('unsplash1.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    font-family: 'Kalam', cursive;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+}
+
+.centered-content {
+    text-align: left;
+    background-color: rgba(46, 38, 40, 0.8); /* Add a semi-transparent background */
+    padding: 20px;
+    border-radius: 10px;
+    width: 50%;
+    height:85%;
+    
+}
+.label_box{
+
+        background-color: rgba(128, 110, 114, 0.1); /* Add a semi-transparent background */
+        padding: 20px;
+        border-radius: 10px;
+        width: 55%; 
+        height:0px;
+    
+}
+
+h1 {
+    font-family: 'Kalam', cursive;
+    font-size: 36px;
+    color: #f7f4f4;
+    margin: 0;
+}
+
+form {
+    margin-top: 20px;
+}
+
+label {
+    font-family: 'Arial', sans-serif;
+    font-size: 18px;
+    color: #f7f4f4;
+    text-align: left;
+}
+
+select {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    margin-top: 10px;
+}
+
+input[type="submit"] {
+    /* background-color: #007bff; */
+    background-color: #050505;
+    color: white;
+    padding: 10px 20px;
+    font-size: 18px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.5s;
+    margin: 0 auto; 
+    display: block;
+
+}
+
+input[type="submit"]:hover {
+    background-color: #0bd972;
+}
