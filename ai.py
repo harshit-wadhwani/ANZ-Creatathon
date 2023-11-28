@@ -4,9 +4,9 @@ from langchain.vectorstores import Chroma
 from langchain.llms import GooglePalm
 from langchain.chains import RetrievalQA
 import google.generativeai as palm
-palm.configure(api_key="AIzaSyDhXDX0w_NTUiAmJKqWibB3a8PmZQynWhI")
+palm.configure(api_key="")
 
-os.environ['GOOGLE_API_KEY'] = "AIzaSyDhXDX0w_NTUiAmJKqWibB3a8PmZQynWhI"
+os.environ['GOOGLE_API_KEY'] = ""
 llm = GooglePalm(temperature=0.5)
 
 def generate_questions_jd(job_description):
