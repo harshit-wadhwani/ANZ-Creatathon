@@ -1,14 +1,46 @@
 body {
     margin: 0;
     font-family: 'Arial', sans-serif;
-    display: flex;
+  
     justify-content: center;
     align-items: center;
     height: 100vh;
+    background-color:black;
+   
+}
+.page-container {
+    /* display: flex;
+    flex-direction: column; */
+    height: 100vh;
+}
+header {
+    padding: 5px;
+    text-align: center;
+    color:white;
+    font-family:'Kalam', cursive;
+    height:70px;
+}
+footer{
+    padding: 5px;
+    text-align: center;
+    color:white;
+    height:70px;
+
 }
 
+
 .interview-container {
-    text-align: center;
+   
+    flex: 1;
+    display: flex;
+    flex-direction: column; /* Ensures child elements stack vertically */
+    /* justify-content: center; */
+    height: 470px;
+    align-items: flex-start; /* Align child elements to the left */
+    background-color:#c7b9ba;/* Background color for the central div */
+    padding-left: 20px;
+    box-sizing: border-box;
+    
 }
 
 button {
@@ -16,8 +48,18 @@ button {
     padding: 10px 20px;
     font-size: 16px;
     cursor: pointer;
+    background-color: black;
+    color: white;
+    border: 1px solid white;
+    border-radius: 20px;
+    transition: background-color 0.5s, color 0.5s;
 }
 
+button:hover {
+    background-color: #0bd972;
+    color: black;
+}
 audio {
-    margin: 10px;
+    margin: 10px auto;
+    
 }

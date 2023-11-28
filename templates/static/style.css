@@ -23,12 +23,13 @@ body {
 .label_box{
 
         background-color: rgba(128, 110, 114, 0.1); /* Add a semi-transparent background */
-        padding: 20px;
+        padding: 15px;
         border-radius: 10px;
         width: 55%; 
-        height:0px;
+        height:15px;
         color:white;
-        font-size:18px;
+        font-size:17px;
+        
     
 }
 

@@ -2,6 +2,7 @@ from flask import Flask, render_template,  request, session, redirect, url_for
 import os
 import PyPDF2
 from ai import generate_questions_resume, generate_questions_jd
+from gtts import gTTS
 
 jd = {
     "Junior Software Developer" : """Job Title: Junior Software Developer
@@ -196,11 +197,12 @@ def loading():
                 page = pdf_reader.pages[page_num]
                 extracted_text += page.extract_text()
                 
-        
-        session["resume_questions"] =  generate_questions_jd(jd[session["job_role"]])
+        session["resume_questions"] = []
+        session["resume_questions"].extend(generate_questions_jd(jd[session["job_role"]]))
         session["resume_questions"].extend(generate_questions_resume(extracted_text)) 
         print(session["resume_questions"]) 
         print(session["job_role"])
+        
         
         return redirect(url_for('questions'))
             
@@ -208,7 +210,8 @@ def loading():
 
 @app.route("/questions", methods=['GET', 'POST'])
 def questions():
-    return render_template("questions.html", questions = session["resume_questions"])
+    
+    return render_template("questions.html", questions = session["resume_questions"],candidate_name=session["name"])
 
 
     

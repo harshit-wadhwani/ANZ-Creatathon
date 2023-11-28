@@ -3,28 +3,41 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="question_style.css">
+    <link rel="stylesheet" type="text/css" href="static/question_style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Edu+TAS+Beginner&family=Inter:wght@200;300;400;500;600&family=Kalam&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap">
     <title>Document</title>
 </head>
 <body>
-    <div class="interview-container">
-    <h2>Questions</h2>
+    <div class="page-container">
 
+    <header>
+        <h1>Welcome {{ candidate_name }}</h1>
+    </header>
+    <div class="interview-container">
     <h3>Please follow the following instructions to take the interview. </h3>
-    <h4>Instructions:</h4>
-    <h4>1. This is a voice based interview</h4>
-    <h4>2. The question will be asked via a voice and to answer you must click on the mic button to record the answer.</h4>
-    <h4>3. Click on the next button to hear the next question.</h4>
-    <h4>4. Click on start interview to take the interview.</h4>
-    <button id="startInterview" onclick="startInterview()">Start Interview</button>
+    <h4>Instructions:<br><br>
+        1. This is a voice based interview <br>
+        2. The question will be asked via a voice and to answer you must click on the mic button to record the answer.<br>
+        3. Click on the next button to hear the next question.<br>
+        4. Click on start interview to take the interview.
+    </h4>
+    
+    <button id="startInterview" class ="start_button" onclick="startInterview()">Start Interview</button>
         <audio id="questionAudio" controls></audio>
-        <button id="recordButton" onclick="startRecording()">Record Answer</button>
-        <button id="saveButton" onclick="saveAnswer()">Save Answer</button>
-    <h2>{{questions[0]}}</h2>
+        
+    <!-- <h2>{{questions[0]}}</h2>
     <h2>{{questions[1]}}</h2>
     <h2>{{questions[2]}}</h2>
     <h2>{{questions[3]}}</h2>
-    <h2>{{questions[4]}}</h2>
+    <h2>{{questions[4]}}</h2> -->
     </div>
+    <footer>
+        <button id="recordButton" onclick="startRecording()">Record Answer</button>
+        <button id="saveButton" onclick="saveAnswer()">Save Answer</button>
+    </footer>
+</div>
 </body>
 </html>
