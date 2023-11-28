@@ -2,13 +2,28 @@ let mediaRecorder;
 let recordedChunks = [];
 
 let questionIndex = 0;
-const questions = [
-    'question1.mp3',
-    'question2.mp3',
-    'question3.mp3',
-    'question4.mp3',
-    'question5.mp3',
-];
+const questions = [];
+
+fetch('questions_audio/')
+  .then(response => response.text())
+  .then(data => {
+    const parser = new DOMParser();
+    const htmlDocument = parser.parseFromString(data, 'text/html');
+    const links = htmlDocument.querySelectorAll('a');
+    links.forEach(link => {
+      if (link.href.endsWith('.mp3')) {
+        questions.push(link.href.split('/').pop());
+      }
+    });
+  })
+  .catch(error => console.error('Error fetching questions:', error));
+// const questions = [
+//     'question1.mp3',
+//     'question2.mp3',
+//     'question3.mp3',
+//     'question4.mp3',
+//     'question5.mp3',
+// ];
 
 const questionAudio = document.getElementById('questionAudio');
 
@@ -41,7 +56,7 @@ function saveAnswer() {
     mediaRecorder.stop();
 
     const blob = new Blob(recordedChunks, {
-        type: 'audio/mp3'
+        type: 'audio/wav'
     });
 
     const url = URL.createObjectURL(blob);
