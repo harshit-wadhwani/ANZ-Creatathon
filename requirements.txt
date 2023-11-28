@@ -16,4 +16,9 @@ pyasn1==0.5.1
 pyasn1-modules==0.3.0 
 rsa==4.9 
 tqdm==4.66.1
+<<<<<<< HEAD
 gtts
+=======
+nltk==3.8.1 
+regex==2S023.10.3
+>>>>>>> dae693c492aa0a79bdc55096f258573addbd43ff
