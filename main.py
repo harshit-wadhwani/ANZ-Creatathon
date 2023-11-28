@@ -2,7 +2,8 @@ from flask import Flask, render_template,  request, session, redirect, url_for
 import os
 import PyPDF2
 from ai import generate_questions_resume, generate_questions_jd
-from gtts import gTTS
+from texttospeech import text_to_speech
+
 
 jd = {
     "Junior Software Developer" : """Job Title: Junior Software Developer
@@ -202,6 +203,11 @@ def loading():
         session["resume_questions"].extend(generate_questions_resume(extracted_text)) 
         print(session["resume_questions"]) 
         print(session["job_role"])
+        counter = 1
+        for question in session["resume_questions"]:
+            text_to_speech(question, filename=f"questions_audio\\questions_{counter}.mp3")
+            counter +=1
+        
         
         
         return redirect(url_for('questions'))

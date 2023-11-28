@@ -37,60 +37,60 @@ def generate_questions_resume(resume_text):
 
 
 
-print(generate_questions_jd("""Job Title: Junior Software Developer
+# print(generate_questions_jd("""Job Title: Junior Software Developer
 
-Job Summary:
-We are seeking a highly motivated and talented Junior Software Developer to join our dynamic team. As a Junior Software Developer, you will work closely with experienced developers to design, develop, and maintain high-quality software solutions. This is an excellent opportunity for an entry-level professional to gain hands-on experience in software development and contribute to innovative projects.
+# Job Summary:
+# We are seeking a highly motivated and talented Junior Software Developer to join our dynamic team. As a Junior Software Developer, you will work closely with experienced developers to design, develop, and maintain high-quality software solutions. This is an excellent opportunity for an entry-level professional to gain hands-on experience in software development and contribute to innovative projects.
 
-Responsibilities:
+# Responsibilities:
 
-Coding and Programming:
+# Coding and Programming:
 
-Collaborate with senior developers to write clean, efficient, and well-documented code.
-Participate in the development and implementation of software solutions based on project requirements.
-Testing and Debugging:
+# Collaborate with senior developers to write clean, efficient, and well-documented code.
+# Participate in the development and implementation of software solutions based on project requirements.
+# Testing and Debugging:
 
-Conduct thorough testing of applications to ensure they meet quality standards.
-Identify and resolve software defects and issues in a timely manner.
-Collaboration:
+# Conduct thorough testing of applications to ensure they meet quality standards.
+# Identify and resolve software defects and issues in a timely manner.
+# Collaboration:
 
-Work closely with cross-functional teams, including designers and product managers, to understand project requirements and contribute to the overall success of the team.
-Collaborate with team members to review code, share knowledge, and ensure best practices are followed.
-Learning and Growth:
+# Work closely with cross-functional teams, including designers and product managers, to understand project requirements and contribute to the overall success of the team.
+# Collaborate with team members to review code, share knowledge, and ensure best practices are followed.
+# Learning and Growth:
 
-Stay updated on industry trends, technologies, and best practices.
-Continuously improve your technical skills and contribute to a culture of learning within the team.
-Qualifications:
+# Stay updated on industry trends, technologies, and best practices.
+# Continuously improve your technical skills and contribute to a culture of learning within the team.
+# Qualifications:
 
-Education:
+# Education:
 
-Bachelor’s degree in Computer Science, Software Engineering, or a related field.
-Technical Skills:
+# Bachelor’s degree in Computer Science, Software Engineering, or a related field.
+# Technical Skills:
 
-Proficiency in at least one programming language (e.g., Java, Python, C#).
-Understanding of software development principles and best practices.
-Knowledge of web development technologies (HTML, CSS, JavaScript) is a plus.
-Communication:
+# Proficiency in at least one programming language (e.g., Java, Python, C#).
+# Understanding of software development principles and best practices.
+# Knowledge of web development technologies (HTML, CSS, JavaScript) is a plus.
+# Communication:
 
-Strong communication skills, both verbal and written.
-Ability to work collaboratively in a team environment.
-Problem-Solving:
+# Strong communication skills, both verbal and written.
+# Ability to work collaboratively in a team environment.
+# Problem-Solving:
 
-Strong problem-solving skills and the ability to think critically.
-Eagerness to learn and adapt to new technologies and challenges.
-Initiative:
+# Strong problem-solving skills and the ability to think critically.
+# Eagerness to learn and adapt to new technologies and challenges.
+# Initiative:
 
-Proactive attitude with a willingness to take ownership of tasks and projects.
-Ability to work independently and seek guidance when needed.
-Benefits:
+# Proactive attitude with a willingness to take ownership of tasks and projects.
+# Ability to work independently and seek guidance when needed.
+# Benefits:
 
-Competitive salary and performance-based incentives.
-Opportunities for professional development and career advancement.
-Health and wellness programs.
-Collaborative and inclusive work environment.
-If you are passionate about software development, eager to learn, and ready to contribute to innovative projects, we encourage you to apply for this exciting opportunity as a Junior Software Developer. Join us in shaping the future of technology!
-"""
-))
+# Competitive salary and performance-based incentives.
+# Opportunities for professional development and career advancement.
+# Health and wellness programs.
+# Collaborative and inclusive work environment.
+# If you are passionate about software development, eager to learn, and ready to contribute to innovative projects, we encourage you to apply for this exciting opportunity as a Junior Software Developer. Join us in shaping the future of technology!
+# """
+
 # print(generate_questions_resume(r"""HARSHIT  WADHWANI  
 # Bengaluru, Karnataka  • +91 -7990728742  • harshitwadhwani23@gmail.com  • LinkedIn  • GitHub   
  
