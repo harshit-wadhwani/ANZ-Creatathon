@@ -4,7 +4,10 @@ let recordedChunks = [];
 let questionIndex = 0;
 const questions = [];
 
-fetch('questions_audio/')
+let startInterview = document.getElementById('startInterview');
+startInterview.disabled = true;
+
+fetch('../questions_audio/')
   .then(response => response.text())
   .then(data => {
     const parser = new DOMParser();
@@ -15,8 +18,11 @@ fetch('questions_audio/')
         questions.push(link.href.split('/').pop());
       }
     });
+    console.log(questions); // Debugging statement
+    startInterview.disabled = false; // Enable the button after questions have been fetched
   })
   .catch(error => console.error('Error fetching questions:', error));
+
 // const questions = [
 //     'question1.mp3',
 //     'question2.mp3',
@@ -26,10 +32,11 @@ fetch('questions_audio/')
 // ];
 
 const questionAudio = document.getElementById('questionAudio');
+// questionAudio.play();
 
 function startInterview() {
     if (questionIndex < questions.length) {
-        questionAudio.src = questions[questionIndex];
+        questionAudio.src = '../questions_audio/'+ questions[questionIndex];
         questionAudio.play();
         questionIndex++;
     } else {
@@ -63,9 +70,9 @@ function saveAnswer() {
     const a = document.createElement('a');
     a.style.display = 'none';
     a.href = url;
-    a.download = `${email}:ans${questionIndex}.mp3`;
+    a.download = `${email}:ans${questionIndex}.wav`;
     document.body.appendChild(a);
-    a.setAttribute('download', `answer_audio/${email}:ans${questionIndex}.mp3`);
+    a.setAttribute('download', `../ans_audio/${email}:ans${questionIndex}.wav`);
     document.body.appendChild(a);
     a.click();
     alert('Answer saved!');
