@@ -3,7 +3,7 @@ let recordedChunks = [];
 
 let questionIndex = 0;
 const questions = [];
-
+console.log("testing here")
 let startInterview = document.getElementById('startInterview');
 startInterview.disabled = true;
 
@@ -37,45 +37,62 @@ function startInterview() {
     }
 }
 
-function startRecording() {
-    navigator.mediaDevices.getUserMedia({ audio: true })
-        .then(stream => {
-            mediaRecorder = new MediaRecorder(stream);
-            mediaRecorder.start();
+// function startRecording() {
+//     navigator.mediaDevices.getUserMedia({ audio: true })
+//         .then(stream => {
+//             mediaRecorder = new MediaRecorder(stream);
+//             mediaRecorder.start();
 
-            mediaRecorder.ondataavailable = function(e) {
-                recordedChunks.push(e.data);
-            };
+//             mediaRecorder.ondataavailable = function(e) {
+//                 recordedChunks.push(e.data);
+//             };
 
-            alert('Recording started...');
-            mediaRecorder.onstop = function(e) {
-              console.log('Recording stopped:', e);
-          };
+//             alert('Recording started...');
+//             mediaRecorder.onstop = function(e) {
+//               console.log('Recording stopped:', e);
+//           };
           
-          mediaRecorder.onerror = function(e) {
-              console.error('MediaRecorder error:', e);
-          };
+//           mediaRecorder.onerror = function(e) {
+//               console.error('MediaRecorder error:', e);
+//           };
           
-        })
-        .catch(err => console.log('getUserMedia Error: ', err));
-}
+//         })
+//         .catch(err => console.log('getUserMedia Error: ', err));
+// }
 
-function saveAnswer() {
-    mediaRecorder.stop();
+// function startRecording() {
+//   console.log(started)
+//   navigator.mediaDevices.getUserMedia({ audio: true })
+//     .then(function(stream) {
+//       mediaRecorder = new MediaRecorder(stream);
+//       mediaRecorder.start();
+//     })
+//     .catch(function(err) {
+//       console.log('Error: ' + err);
+//     });
+// }
+// function stopRecording() {
+//   if (mediaRecorder && mediaRecorder.state === 'recording') {
+//     mediaRecorder.stop(); // Stop the recording if it's currently in the recording state
+//   }
+// }
 
-    const blob = new Blob(recordedChunks, {
-        type: 'audio/wav'
-    });
+// function saveAnswer(email) {
+//     mediaRecorder.stop();
 
-    const url = URL.createObjectURL(blob);
-    const a = document.createElement('a');
-    a.style.display = 'none';
-    a.href = url;
-    a.download = `${email}:ans${questionIndex}.wav`;
-    document.body.appendChild(a);
-    a.setAttribute('download', `../ans_audio/${email}:ans${questionIndex}.wav`);
-    document.body.appendChild(a);
-    a.click();
-    alert('Answer saved!');
-    startInterview(); 
-}
+//     const blob = new Blob(recordedChunks, {
+//         type: 'audio/wav'
+//     });
+
+//     const url = URL.createObjectURL(blob);
+//     const a = document.createElement('a');
+//     a.style.display = 'none';
+//     a.href = url;
+//     a.download = `${email}:ans${questionIndex}.wav`;
+//     document.body.appendChild(a);
+//     a.setAttribute('download', `../ans_audio/${email}:ans${questionIndex}.wav`);
+//     document.body.appendChild(a);
+//     a.click();
+//     alert('Answer saved!');
+//     startInterview(); 
+// }

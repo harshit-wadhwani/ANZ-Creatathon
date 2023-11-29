@@ -217,12 +217,21 @@ def loading():
 @app.route("/questions", methods=['GET', 'POST'])
 def questions():
     
-    return render_template("questions.html", questions = session["resume_questions"],candidate_name=session["name"])
+    return render_template("questions.html", questions = session["resume_questions"],candidate_name=session["name"],email=session["email"])
 
 @app.route('/questions_audio/<filename>')
 def audio(filename):
     audio_path = f'questions_audio\\{filename}'
     return send_file(audio_path)
+
+@app.route('/save_answer', methods=['POST'])
+def save_answer():
+    audio_data = request.files['audio']
+    index = request.form['index']
+    
+    audio_data.save(f'answer_audio\\{session["email"]}ans{index}.wav')
+    
+    return "success", 200
 
 
     
