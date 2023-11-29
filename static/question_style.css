@@ -41,6 +41,7 @@ header {
     background-color:#c7b9ba;/* Background color for the central div */
     /* padding-left: 20px; */
     box-sizing: border-box;
+    overflow: hidden;
    
 }
 
