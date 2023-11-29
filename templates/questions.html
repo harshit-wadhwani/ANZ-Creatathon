@@ -27,7 +27,12 @@
     </h4>
     
     <button id="startInterview" class ="start_button" onclick="startInterview()">Start Interview</button>
-        <audio id="questionAudio" controls></audio>
+    <form method="POST" >
+        <audio id="questionAudio"  controls>
+            <source src="{{url_for('audio', filename='questions_1.mp3')}}" type="audio/mp3">
+        </audio>
+
+    </form>
         
     <!-- <h2>{{questions[0]}}</h2>
     <h2>{{questions[1]}}</h2>
@@ -39,7 +44,7 @@
         <button id="recordButton" onclick="startRecording()">Record Answer</button>
         <button id="saveButton" onclick="saveAnswer()">Save Answer</button>
     </footer>
-    <script src="{{ url_for('static', filename='question.js')}}"></script>
+
 </div>
 </body>
 </html>

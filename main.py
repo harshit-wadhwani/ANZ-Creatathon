@@ -1,4 +1,4 @@
-from flask import Flask, render_template,  request, session, redirect, url_for
+from flask import Flask, render_template,  request, session, redirect, url_for, send_file
 import os
 import PyPDF2
 from ai import generate_questions_resume, generate_questions_jd
@@ -218,6 +218,11 @@ def loading():
 def questions():
     
     return render_template("questions.html", questions = session["resume_questions"],candidate_name=session["name"])
+
+@app.route('/questions_audio/<filename>')
+def audio(filename):
+    audio_path = f'questions_audio\\{filename}'
+    return send_file(audio_path)
 
 
     

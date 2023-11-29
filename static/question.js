@@ -23,13 +23,6 @@ fetch('../questions_audio/')
   })
   .catch(error => console.error('Error fetching questions:', error));
 
-// const questions = [
-//     'question1.mp3',
-//     'question2.mp3',
-//     'question3.mp3',
-//     'question4.mp3',
-//     'question5.mp3',
-// ];
 
 const questionAudio = document.getElementById('questionAudio');
 // questionAudio.play();
