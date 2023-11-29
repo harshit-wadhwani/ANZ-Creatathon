@@ -20,6 +20,11 @@ header {
     font-family:'Kalam', cursive;
     height:270px;
 }
+.thanks{
+    font-family:'Kalam', cursive;
+    color: white;
+    text-align: center;
+}
 .instruct{
     text-align: left;
     padding-left: 10px;
@@ -30,10 +35,11 @@ header {
     /* display: flex; */
     flex-direction: column; /* Ensures child elements stack vertically */
     /* justify-content: center; */
-    height: 1080px;
+    height: 230px;
+    border-radius: 15px;
     align-items: flex-start; /* Align child elements to the left */
     background-color:#c7b9ba;/* Background color for the central div */
-    padding-left: 20px;
+    /* padding-left: 20px; */
     box-sizing: border-box;
    
 }
@@ -93,7 +99,14 @@ button:hover {
 }
 audio {
     margin: 10px auto;
-    margin-bottom: 40px;
+    margin-bottom: 30px;
     align-items: center;
     
+}
+footer {
+    padding: 5px;
+    text-align: center;
+    color:white;
+    
+    height:60px;
 }

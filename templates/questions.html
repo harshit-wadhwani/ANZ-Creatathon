@@ -95,6 +95,11 @@
      
 
 </div>
+<footer>
+  <form action="{{url_for('evaluate')}}" method="post">
+  <button id="sub" type = "submit" >Submit</button>
+</form>
+</footer>
 </div>
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
@@ -160,6 +165,7 @@ function saveAnswer(email ,slidenum) {
   // Reset the mediaRecorder
   mediaRecorder = null;
 }
+
 
 $(document).ready(function(){
         $('.slider-container').slick({

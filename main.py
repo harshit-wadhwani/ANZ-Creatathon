@@ -233,6 +233,18 @@ def save_answer():
     
     return "success", 200
 
+@app.route('/evaluate', methods = ['POST'])
+def evaluate():
+    email = session['email']
+    
+    print("evaulating")
+    
+    return redirect(url_for('thankyou'))
+    
+@app.route('/thankyou', methods = ['GET', 'POST'])
+def thankyou():
+    return render_template("thankyou.html")
+
 
     
 if __name__ == '__main__':
