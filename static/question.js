@@ -1,41 +1,41 @@
-let mediaRecorder;
-let recordedChunks = [];
+// let mediaRecorder;
+// let recordedChunks = [];
 
-let questionIndex = 0;
-const questions = [];
-console.log("testing here")
-let startInterview = document.getElementById('startInterview');
-startInterview.disabled = true;
+// let questionIndex = 0;
+// const questions = [];
+// console.log("testing here")
+// let startInterview = document.getElementById('startInterview');
+// startInterview.disabled = true;
+// //testing
+// fetch('../questions_audio/')
+//   .then(response => response.text())
+//   .then(data => {
+//     const parser = new DOMParser();
+//     const htmlDocument = parser.parseFromString(data, 'text/html');
+//     const links = htmlDocument.querySelectorAll('a');
+//     links.forEach(link => {
+//       if (link.href.endsWith('.mp3')) {
+//         questions.push(link.href.split('/').pop());
+//       }
+//     });
+//     console.log(questions); // Debugging statement
+//     startInterview.disabled = false; // Enable the button after questions have been fetched
+//   })
+//   .catch(error => console.error('Error fetching questions:', error));
 
-fetch('../questions_audio/')
-  .then(response => response.text())
-  .then(data => {
-    const parser = new DOMParser();
-    const htmlDocument = parser.parseFromString(data, 'text/html');
-    const links = htmlDocument.querySelectorAll('a');
-    links.forEach(link => {
-      if (link.href.endsWith('.mp3')) {
-        questions.push(link.href.split('/').pop());
-      }
-    });
-    console.log(questions); // Debugging statement
-    startInterview.disabled = false; // Enable the button after questions have been fetched
-  })
-  .catch(error => console.error('Error fetching questions:', error));
 
+// const questionAudio = document.getElementById('questionAudio');
+// // questionAudio.play();
 
-const questionAudio = document.getElementById('questionAudio');
-// questionAudio.play();
-
-function startInterview() {
-    if (questionIndex < questions.length) {
-        questionAudio.src = '../questions_audio/'+ questions[questionIndex];
-        questionAudio.play();
-        questionIndex++;
-    } else {
-        alert('Interview completed!');
-    }
-}
+// function startInterview() {
+//     if (questionIndex < questions.length) {
+//         questionAudio.src = '../questions_audio/'+ questions[questionIndex];
+//         questionAudio.play();
+//         questionIndex++;
+//     } else {
+//         alert('Interview completed!');
+//     }
+// }
 
 // function startRecording() {
 //     navigator.mediaDevices.getUserMedia({ audio: true })
