@@ -4,28 +4,22 @@ let recordedChunks = [];
 let questionIndex = 0;
 const questions = [];
 
+let startInterview = document.getElementById('startInterview');
+startInterview.disabled = true;
+
 fetch('../questions_audio/')
   .then(response => response.text())
   .then(data => {
     const parser = new DOMParser();
     const htmlDocument = parser.parseFromString(data, 'text/html');
-    
-    // Assuming your links are stored in an element with the ID 'audioLinks'
-    const linksContainer = htmlDocument.getElementById('audioLinks');
-    
-    if (linksContainer) {
-      const links = linksContainer.querySelectorAll('a');
-      
-      links.forEach(link => {
-        if (link.href.endsWith('.mp3')) {
-          questions.push(link.href);
-        }
-      });
-      
-      console.log('Fetched questions:', questions);
-    } else {
-      console.error('Audio links container not found');
-    }
+    const links = htmlDocument.querySelectorAll('a');
+    links.forEach(link => {
+      if (link.href.endsWith('.mp3')) {
+        questions.push(link.href.split('/').pop());
+      }
+    });
+    console.log(questions); // Debugging statement
+    startInterview.disabled = false; // Enable the button after questions have been fetched
   })
   .catch(error => console.error('Error fetching questions:', error));
 
@@ -38,18 +32,12 @@ fetch('../questions_audio/')
 // ];
 
 const questionAudio = document.getElementById('questionAudio');
+// questionAudio.play();
 
 function startInterview() {
     if (questionIndex < questions.length) {
-        questionAudio.src = questions[questionIndex];
-        console.log('Audio source:', questionAudio.src);
-        questionAudio.play()
-        .then(() => {
-          console.log('Audio playback started successfully');
-        })
-        .catch(error => {
-          console.error('Error starting audio playback:', error);
-        });
+        questionAudio.src = '../questions_audio/'+ questions[questionIndex];
+        questionAudio.play();
         questionIndex++;
     } else {
         alert('Interview completed!');
@@ -92,7 +80,7 @@ function saveAnswer() {
     a.href = url;
     a.download = `${email}:ans${questionIndex}.wav`;
     document.body.appendChild(a);
-    a.setAttribute('download', `answer_audio/${email}:ans${questionIndex}.wav`);
+    a.setAttribute('download', `../ans_audio/${email}:ans${questionIndex}.wav`);
     document.body.appendChild(a);
     a.click();
     alert('Answer saved!');
