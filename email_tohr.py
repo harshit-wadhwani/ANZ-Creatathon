@@ -7,17 +7,18 @@ import os
 def send_email_to_hr(candidate_email, score, questions, answers, phone):
     # Email configuration
     sender_email = 'sejalkaur.work@gmail.com'  # sender email address
-    password = 'password'  # sender email password
+    password = 'vakv rmbu copp fakk'  # sender email password
     hr_email = 'harshitwadhwani23@gmail.com'  # HR's email address
     subject = 'New Candidate Submission'
 
     # Build the email body with questions
     message = f'Dear HR,\n\nA new candidate has submitted their application. Details are as follows:\n\nCandidate Email: {candidate_email}\n\nPlease find below the interview questions:\n\n'
     message += '\n'.join(questions)
-    message +=  '\n'.join(answers)
-    message += "\n" + score
-    message += '\n\nBest regards,\n Team automatic'
-    
+    message += '\n\nAnswers:\n'
+    message += '\n'.join(answers)
+    message += "\nScore: " + str(score)
+    message += f'\n\nPhone: {phone}\n\nBest regards,\n Team automatic'
+
     # Create a message object
     msg = MIMEMultipart()
     msg['From'] = sender_email
@@ -34,7 +35,7 @@ def send_email_to_hr(candidate_email, score, questions, answers, phone):
 
     try:
         # Connect to the SMTP server and send the email
-        server = smtplib.SMTP('smtp.example.com', 587)  # Replace with your SMTP server and port
+        server = smtplib.SMTP('smtp.gmail.com', 587)  # Use Gmail SMTP server and port 587
         server.starttls()
         server.login(sender_email, password)
         server.send_message(msg)
@@ -42,3 +43,6 @@ def send_email_to_hr(candidate_email, score, questions, answers, phone):
         print("Email sent to HR successfully!")
     except Exception as e:
         print(f"Error: {e}")
+
+# Example usage
+send_email_to_hr('sejalkaur.work@gmail.com', 33, ['test'], ['test'], '779000')
