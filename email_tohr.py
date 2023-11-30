@@ -7,7 +7,7 @@ import os
 def send_email_to_hr(candidate_email, score, questions, answers, phone):
     # Email configuration
     sender_email = 'sejalkaur.work@gmail.com'  # sender email address
-    password = 'Jupy1298'  # sender email password
+    password = 'pass'  # sender email password
     hr_email = 'harshitwadhwani23@gmail.com'  # HR's email address
     subject = 'New Candidate Submission'
 
