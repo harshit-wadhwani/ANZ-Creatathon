@@ -14,7 +14,7 @@ def send_email(candidate_email):
     msg['Subject'] = subject
     msg.attach(MIMEText(message, 'plain'))
     try:
-        server = smtplib.SMTP('smtp.example.com', 587)  # Replace with your SMTP server and port
+        server = smtplib.SMTP('smtp.gmail.com', 587)  # Replace with your SMTP server and port
         server.starttls()
         server.login(sender_email, password)
         server.send_message(msg)
