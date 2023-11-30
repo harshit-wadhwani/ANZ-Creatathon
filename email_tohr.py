@@ -4,7 +4,7 @@ from email.mime.text import MIMEText
 from email.mime.application import MIMEApplication
 import os
 
-def send_email_to_hr(candidate_email, score, questions, answers, phone):
+def send_email_to_hr(candidate_email,name, score, questions, answers, phone):
     # Email configuration
     sender_email = 'sejalkaur.work@gmail.com'  # sender email address
     password = 'vakv rmbu copp fakk'  # sender email password
@@ -12,12 +12,12 @@ def send_email_to_hr(candidate_email, score, questions, answers, phone):
     subject = 'New Candidate Submission'
 
     # Build the email body with questions
-    message = f'Dear HR,\n\nA new candidate has submitted their application. Details are as follows:\n\nCandidate Email: {candidate_email}\n\nPlease find below the interview questions:\n\n'
+    message = f'Dear HR,\n\nA new candidate has submitted their application. Details are as follows:\n\nCandidate Name: {name}\n\nCandidate Email: {candidate_email}Candidate Phone Number: {phone}\n\n\n\nPlease find below the interview questions:\n\n'
     message += '\n'.join(questions)
     message += '\n\nAnswers:\n'
     message += '\n'.join(answers)
-    message += "\nScore: " + str(score)
-    message += f'\n\nPhone: {phone}\n\nBest regards,\n Team automatic'
+    message += "\n\nScore: " + str(score)
+    message += "\n\nBest regards,\n Team ctrl+shift+esc"
 
     # Create a message object
     msg = MIMEMultipart()
