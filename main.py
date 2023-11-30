@@ -3,6 +3,8 @@ import os
 import PyPDF2
 from ai import generate_questions_resume, generate_questions_jd
 from texttospeech import text_to_speech
+from speech_to_text import speech_to_text_from_file
+from scoring import final_score
 
 
 jd = {
@@ -236,9 +238,21 @@ def save_answer():
 @app.route('/evaluate', methods = ['POST'])
 def evaluate():
     email = session['email']
+    counter =1
+    ans_audio_name = email + f'ans{counter}' + '.wav' 
+    ans_text = []
+    for i in range(1,6):
+        audio_text = speech_to_text_from_file(ans_audio_name)
+        ans_text.append(audio_text) 
+        counter +=1
+    score = 0
+    for q,a in zip(session["resume_questions"][:3], ans_text[:3]):
+        score += final_score(q,a)
+        
     
-    print("evaulating")
     
+        
+        
     return redirect(url_for('thankyou'))
     
 @app.route('/thankyou', methods = ['GET', 'POST'])

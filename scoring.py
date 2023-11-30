@@ -77,4 +77,7 @@ def get_question_answer_score(question,user_answer,proper_answer):
     return score
     
 
-
+def final_score(question, user_answer):
+    ans = get_proper_answer(question)
+    sc = get_question_answer_score(question, user_answer, ans)
+    return sc

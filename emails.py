@@ -22,3 +22,4 @@ def send_email(candidate_email):
         print("Email sent successfully!")
     except Exception as e:
         print(f"Error: {e}")
+        
