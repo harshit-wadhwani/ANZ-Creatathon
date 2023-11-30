@@ -27,6 +27,6 @@ def speech_to_text_from_file(file_path):
         print("Error: {0}".format(e))
 
         
-print(speech_to_text_from_file("answer_audio\\kesu1407@gmail.comans1.wav"))
+# print(speech_to_text_from_file("answer_audio\\kesu1407@gmail.comans1.wav"))
 
 
