@@ -5,6 +5,7 @@ from ai import generate_questions_resume, generate_questions_jd
 from texttospeech import text_to_speech
 from speech_to_text import speech_to_text_from_file
 from scoring import final_score
+from email_tohr import send_email_to_hr
 
 
 jd = {
@@ -219,7 +220,7 @@ def loading():
 @app.route("/questions", methods=['GET', 'POST'])
 def questions():
     
-    return render_template("questions.html", questions = session["resume_questions"],candidate_name=session["name"],email=session["email"])
+    return render_template("questions.html", questions = session["resume_questions"],candidate_name=session["name"],email=session["email"],name=session["name"])
 
 @app.route('/questions_audio/<filename>')
 def audio(filename):
@@ -249,9 +250,7 @@ def evaluate():
     for q,a in zip(session["resume_questions"][:3], ans_text[:3]):
         score += final_score(q,a)
         
-    
-    
-        
+    send_email_to_hr(email, score, session['resume_questions'],ans_text )
         
     return redirect(url_for('thankyou'))
     

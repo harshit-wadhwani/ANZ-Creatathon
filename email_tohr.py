@@ -4,19 +4,18 @@ from email.mime.text import MIMEText
 from email.mime.application import MIMEApplication
 import os
 
-def send_email_to_hr(candidate_email):
+def send_email_to_hr(candidate_email, score, questions, answers, phone):
     # Email configuration
     sender_email = 'sejalkaur.work@gmail.com'  # sender email address
     password = 'Jupy1298'  # sender email password
     hr_email = 'harshitwadhwani23@gmail.com'  # HR's email address
     subject = 'New Candidate Submission'
-    
-    # Questions array from Flask backend
-    questions = ['Question 1', 'Question 2', 'Question 3']
 
     # Build the email body with questions
     message = f'Dear HR,\n\nA new candidate has submitted their application. Details are as follows:\n\nCandidate Email: {candidate_email}\n\nPlease find below the interview questions:\n\n'
     message += '\n'.join(questions)
+    message +=  '\n'.join(answers)
+    message += "\n" + score
     message += '\n\nBest regards,\n Team automatic'
     
     # Create a message object
