@@ -1,4 +1,5 @@
 import nltk
+nltk.download( 'punkt')
 from nltk.tokenize import word_tokenize
 from nltk.corpus import stopwords
 from nltk.stem import PorterStemmer
@@ -26,7 +27,7 @@ def get_proper_answer(question):
     max_output_tokens=800,
     )
     proper_answer= completion.result.split('\n')
-    return proper_answer
+    return "".join(proper_answer)
 
 def calculate_jaccard_similarity(tokens1, tokens2):
     set1 = set(tokens1)

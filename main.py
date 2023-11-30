@@ -240,17 +240,18 @@ def save_answer():
 def evaluate():
     email = session['email']
     counter =1
-    ans_audio_name = email + f'ans{counter}' + '.wav' 
+ 
     ans_text = []
     for i in range(1,6):
-        audio_text = speech_to_text_from_file(ans_audio_name)
+        audio_text = speech_to_text_from_file("answer_audio\\" + email + f'ans{counter}' + '.wav' )
         ans_text.append(audio_text) 
+        print(audio_text)
         counter +=1
     score = 0
     for q,a in zip(session["resume_questions"][:3], ans_text[:3]):
         score += final_score(q,a)
         
-    send_email_to_hr(email, score, session['resume_questions'],ans_text )
+    send_email_to_hr(candidate_email=email, score = score, questions =  session['resume_questions'],answers=ans_text ,phone=session['phone'])
         
     return redirect(url_for('thankyou'))
     

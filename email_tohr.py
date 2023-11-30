@@ -45,4 +45,4 @@ def send_email_to_hr(candidate_email, score, questions, answers, phone):
         print(f"Error: {e}")
 
 # Example usage
-send_email_to_hr('sejalkaur.work@gmail.com', 33, ['test'], ['test'], '779000')
+# send_email_to_hr('sejalkaur.work@gmail.com', 33, ['test'], ['test'], '779000')
